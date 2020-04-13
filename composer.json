@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "alecsisk/twigbridge": "dev-master",
+        "laravel/framework": "5.3.*",
+        "twig/twig": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -25,7 +27,6 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
         ]
     },
     "scripts": {
@@ -47,5 +48,11 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
-    }
+    },
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "git@github.com:alecsisk/laravel5.3-twig.git"
+        }
+    ]
 }
