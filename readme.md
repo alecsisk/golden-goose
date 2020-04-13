@@ -1,3 +1,5 @@
+php artisan migrate --seed
+
 access token: 35c569c38535cb96b63202ebaa1e98550b021cf6
 
 
