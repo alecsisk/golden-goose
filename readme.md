@@ -1,3 +1,6 @@
+- Небольшой обзор на видео:
+https://www.youtube.com/watch?v=bmI8-7LqIQI
+
 - Скачиваем пакеты для запуска:
 composer install
 
