@@ -1,10 +1,8 @@
 <?php
 
-use App\User;
+use App\Entities\User;
+use App\Entities\Channel;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class ChannelSeeder extends Seeder
 {
@@ -15,11 +13,11 @@ class ChannelSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Channel::class, 20)->create();
+        factory(Channel::class, 20)->create();
 
         // заполняем рандомными каналами
-        $channels = App\Channel::all();
-        App\User::all()->each(function (User $user) use ($channels) {
+        $channels = Channel::all();
+        User::all()->each(function (User $user) use ($channels) {
             $user->channels()->attach(
                 $channels->random(rand(1, count($channels)))->pluck('id')->toArray()
             );

@@ -18,6 +18,5 @@ class DatabaseSeeder extends Seeder
         $this->call(ChannelSeeder::class);
 
         Model::reguard();
-        // $this->call(UsersTableSeeder::class);
     }
 }

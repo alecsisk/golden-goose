@@ -1,10 +1,8 @@
 <?php
 
-use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -17,14 +15,8 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'User1',
-            'email' => Str::random(10).'@gmail.com',
+            'email' => 'user1@gmail.com',
             'password' => Hash::make('password'),
         ]);
-
-        /*
-        factory(App\User::class, 5)->create()->each(function(User $u) {
-            $u->channels()->save(factory(App\Channel::class)->make());
-        });
-        */
     }
 }

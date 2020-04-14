@@ -1,17 +1,36 @@
 {% extends "layouts/app.twig" %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Cписок каналов пользователя</div>
 
-                <div class="panel-body">
-                    You are logged in!!!
+                    <ul class="panel-body">
+                        <form role="form" method="POST" action="{{ url('/home') }}">
+                            {{ csrf_field() }}
+                            <ul class="list-group list-group-flush">
+                                {% for channel in channels %}
+                                    <li class="list-group-item">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" name="channels[]" value="{{ channel.id }}"
+                                                   id="{{ channel.id }}" {% if channel.user_id %} checked {% endif %}>
+                                            <label class="custom-control-label"
+                                                   for="{{ channel.id }}">{{ channel.name }}</label>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">
+                                    Сохранить
+                                </button>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 {% endblock %}
