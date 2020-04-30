@@ -24,11 +24,11 @@
  
 Результат опубликовать на GitHub.
 
-
-
-
-
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 - Небольшой обзор на видео:
 https://www.youtube.com/watch?v=bmI8-7LqIQI
